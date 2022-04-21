@@ -18,6 +18,13 @@
     "svg",
     "draw"
   ],
+  "files": [
+    "android/",
+    "ios/",
+    "src/",
+    "index.d.ts",
+    "index.js"
+  ],
   "nativePackage": true,
   "license": "MIT"
 }
