@@ -23,7 +23,8 @@
     "ios/",
     "src/",
     "index.d.ts",
-    "index.js"
+    "index.js",
+    "RNSketchCanvas.podspec"
   ],
   "nativePackage": true,
   "license": "MIT"
