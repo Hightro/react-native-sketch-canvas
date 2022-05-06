@@ -70,6 +70,7 @@ export interface SketchCanvasProps {
   localSourceImage?: LocalSourceImage
   touchEnabled?: boolean
 
+  savePreference?: () => SavePreference;
   /**
    * Android Only: Provide a Dialog Title for the Image Saving PermissionDialog. Defaults to empty string if not set
    */
@@ -150,7 +151,7 @@ export interface RNSketchCanvasProps {
    * @param includeImage default true
    * @param cropToImageSize default false
    */
-  savePreference?: () => {folder: string, filename: string, transparent: boolean, imageType: ImageType, includeImage?: boolean, includeText?: boolean, cropToImageSize?: boolean}
+  savePreference?: () => SavePreference;
   onSketchSaved?: (result: boolean, path: string) => void
 
   text?: CanvasText[]
