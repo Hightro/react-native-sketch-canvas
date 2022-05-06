@@ -45,13 +45,13 @@ type CanvasText = {
 }
 
 export interface SavePreference {
-  folder: string
-  filename: string
-  transparent: boolean
-  imageType: ImageType
-  includeImage?: boolean
-  includeText?: boolean
-  cropToImageSize?: boolean
+  folder: string;
+  filename: string | null;
+  transparent: boolean;
+  imageType: ImageType;
+  includeImage?: boolean;
+  includeText?: boolean;
+  cropToImageSize?: boolean;
 }
 
 export interface LocalSourceImage {
@@ -99,7 +99,7 @@ export class SketchCanvas extends React.Component<SketchCanvasProps & ViewProper
    * @param includeText Set to `true` to include the text drawn from `Text`.
    * @param cropToImageSize Set to `true` to crop output image to the image loaded from `LocalSourceImage`
    */
-  save(imageType: ImageType, transparent: boolean, folder?: string, filename?: string, includeImage?: boolean, includeText?: boolean, cropToImageSize?: boolean): void
+  save(imageType?: ImageType, transparent?: boolean, folder?: string, filename?: string, includeImage?: boolean, includeText?: boolean, cropToImageSize?: boolean): void
   getPaths(): Path[]
 
   /**
