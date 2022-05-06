@@ -96,11 +96,14 @@ export class SketchCanvas extends React.Component<SketchCanvasProps & ViewProper
 
   /**
    * @param imageType "png" or "jpg"
+   * @param transparent Set to `true` to create the image with a transparent background
+   * @param folder The folder used on Android in Photo Gallery, and the folder used in local storage if filename is specified on iOS.
+   * @param filename The filename of the photo. Specify `null` on iOS in order to save to Photo Library.
    * @param includeImage Set to `true` to include the image loaded from `LocalSourceImage`
    * @param includeText Set to `true` to include the text drawn from `Text`.
    * @param cropToImageSize Set to `true` to crop output image to the image loaded from `LocalSourceImage`
    */
-  save(imageType?: ImageType, transparent?: boolean, folder?: string, filename?: string, includeImage?: boolean, includeText?: boolean, cropToImageSize?: boolean): void
+  save(imageType: ImageType, transparent: boolean, folder: string, filename: string | null, includeImage?: boolean, includeText?: boolean, cropToImageSize?: boolean): void
   getPaths(): Path[]
 
   /**
