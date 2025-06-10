@@ -1,7 +1,6 @@
 'use strict';
 
 import React from 'react'
-import PropTypes from 'prop-types'
 import ReactNative, {
   requireNativeComponent,
   NativeModules,
@@ -9,7 +8,6 @@ import ReactNative, {
   PanResponder,
   PixelRatio,
   Platform,
-  ViewPropTypes,
   processColor
 } from 'react-native'
 import { requestPermissions } from './handlePermissions';
@@ -23,36 +21,6 @@ const RNSketchCanvas = requireNativeComponent('RNSketchCanvas', SketchCanvas, {
 const SketchCanvasManager = NativeModules.RNSketchCanvasManager || {};
 
 class SketchCanvas extends React.Component {
-  static propTypes = {
-    style: ViewPropTypes.style,
-    strokeColor: PropTypes.string,
-    strokeWidth: PropTypes.number,
-    onPathsChange: PropTypes.func,
-    onStrokeStart: PropTypes.func,
-    onStrokeChanged: PropTypes.func,
-    onStrokeEnd: PropTypes.func,
-    onSketchSaved: PropTypes.func,
-    user: PropTypes.string,
-
-    touchEnabled: PropTypes.bool,
-
-    text: PropTypes.arrayOf(PropTypes.shape({
-      text: PropTypes.string,
-      font: PropTypes.string,
-      fontSize: PropTypes.number,
-      fontColor: PropTypes.string,
-      overlay: PropTypes.oneOf(['TextOnSketch', 'SketchOnText']),
-      anchor: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }),
-      position: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }),
-      coordinate: PropTypes.oneOf(['Absolute', 'Ratio']),
-      alignment: PropTypes.oneOf(['Left', 'Center', 'Right']),
-      lineHeightMultiple: PropTypes.number,
-    })),
-    localSourceImage: PropTypes.shape({ filename: PropTypes.string, directory: PropTypes.string, mode: PropTypes.oneOf(['AspectFill', 'AspectFit', 'ScaleToFill']) }),
-
-    permissionDialogTitle: PropTypes.string,
-    permissionDialogMessage: PropTypes.string,
-  };
 
   static defaultProps = {
     style: null,
